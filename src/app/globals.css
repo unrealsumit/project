@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 60 56% 91%; /* Light Beige: #F5F5DC */
+    --foreground: 60 10% 20%; /* Darker beige/brown for text */
+
+    --card: 60 50% 97%; /* Lighter Beige for cards */
+    --card-foreground: 60 10% 20%;
+
+    --popover: 60 50% 97%;
+    --popover-foreground: 60 10% 20%;
+
+    --primary: 30 100% 60%; /* Saffron: #FF9933 */
+    --primary-foreground: 0 0% 100%; /* White */
+
+    --secondary: 30 90% 80%; /* Lighter Saffron */
+    --secondary-foreground: 30 100% 30%; /* Darker Saffron */
+
+    --muted: 60 35% 85%;
+    --muted-foreground: 60 25% 55%;
+
+    --accent: 180 100% 25%; /* Teal: #008080 */
+    --accent-foreground: 0 0% 100%; /* White */
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 60 30% 80%;
+    --input: 60 30% 80%;
+    --ring: 180 100% 25%; /* Teal for focus rings */
+
+    --radius: 0.5rem;
+
+    /* Chart colors - can be adjusted if charts are used extensively */
+    --chart-1: 30 100% 60%; /* Saffron */
+    --chart-2: 180 100% 25%; /* Teal */
+    --chart-3: 45 80% 55%; /* Yellow-Orange */
+    --chart-4: 15 85% 60%; /* Orange-Red */
+    --chart-5: 195 75% 40%; /* Darker Teal/Blue */
+
+    /* Sidebar specific variables - retain for ShadCN sidebar component if used, but our main nav will be different */
+    --sidebar-background: 60 40% 88%; /* Slightly darker beige for sidebar */
+    --sidebar-foreground: 60 10% 20%;
+    --sidebar-primary: 30 100% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 180 100% 25%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 60 30% 75%;
+    --sidebar-ring: 180 100% 25%;
+  }
+
+  .dark {
+    --background: 60 10% 15%; /* Dark Desaturated Beige/Brown */
+    --foreground: 60 50% 85%; /* Light Beige for text */
+
+    --card: 60 10% 20%;
+    --card-foreground: 60 50% 85%;
+
+    --popover: 60 10% 20%;
+    --popover-foreground: 60 50% 85%;
+
+    --primary: 30 100% 60%; /* Saffron */
+    --primary-foreground: 0 0% 100%; /* White */
+
+    --secondary: 30 80% 40%; /* Darker Saffron for secondary elements in dark mode */
+    --secondary-foreground: 30 100% 85%; /* Lighter Saffron for text on secondary */
+
+    --muted: 60 10% 25%;
+    --muted-foreground: 60 30% 65%;
+
+    --accent: 180 80% 45%; /* Slightly Lighter Teal for dark mode */
+    --accent-foreground: 0 0% 100%; /* White */
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 60 10% 30%;
+    --input: 60 10% 30%;
+    --ring: 180 80% 45%; /* Teal for focus rings */
+
+    /* Chart colors for dark mode */
+    --chart-1: 30 100% 60%;
+    --chart-2: 180 80% 45%;
+    --chart-3: 45 70% 50%;
+    --chart-4: 15 75% 55%;
+    --chart-5: 195 65% 35%;
+
+    /* Sidebar specific variables for dark mode */
+    --sidebar-background: 60 10% 12%;
+    --sidebar-foreground: 60 50% 85%;
+    --sidebar-primary: 30 100% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 180 80% 45%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 60 10% 25%;
+    --sidebar-ring: 180 80% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
