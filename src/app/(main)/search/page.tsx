@@ -7,7 +7,7 @@ import { Search as SearchIcon, Filter } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { attractions, categories } from '@/lib/data';
 import type { Attraction, Category } from '@/lib/types';
-import { AttractionCard } from '@/components/home/AttractionCard';
+import { AttractionCard } from '@/components/home/AttractionCard';import { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import {
   Select,
@@ -17,7 +17,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 
-export default function SearchPage() {
+function SearchPageContent() {
   const searchParams = useSearchParams();
   const initialQuery = searchParams.get('q') || '';
   const initialCategory = searchParams.get('category') || 'all';
@@ -101,5 +101,13 @@ export default function SearchPage() {
         )}
       </section>
     </div>
+  );
+}
+
+export default function SearchPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SearchPageContent />
+    </Suspense>
   );
 }
